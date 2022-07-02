@@ -1,0 +1,4 @@
+htdocs/vendor/
+htdocs/.htaccess
+htdocs/composer.lock
+.env
