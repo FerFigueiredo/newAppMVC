@@ -1,0 +1,18 @@
+version: "3.7"
+services:
+  web:
+    container_name: php8_apache_oci8
+    build: .
+    restart: always
+    ports:
+      - "8080:80"
+    volumes:
+      - ./htdocs:/var/www/html/
+      - ./conf/apache:/etc/apache2/sites-enabled/
+      - ./.env:/var/www/env/
+
+  composer:
+    image: composer/composer
+    command: install
+    volumes: 
+      - ./htdocs:/app
